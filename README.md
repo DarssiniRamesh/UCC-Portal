@@ -14,7 +14,7 @@
   <a href="https://github.com/PP-Namias/UCC-Student-Portal/issues" target="blank"><img src="https://img.shields.io/github/issues/PP-Namias/UCC-Student-Portal?style=flat-square" alt="UCC Student Portal issues"/></a>
   <a href="https://github.com/PP-Namias/UCC-Student-Portal/pulls" target="blank"><img src="https://img.shields.io/github/issues-pr/PP-Namias/UCC-Student-Portal?style=flat-square" alt="UCC Student Portal pull-requests"/></a>
   <p align="center">
-      Welcome to the UCC Student Portal login page! This is a front-end design for a web application designed to provide students of the University of Caloocan City (UCC) with a centralized platform for accessing academic and administrative services.
+      Welcome to the UCC Student Portal login page!!! This is a front-end design for a web application designed to provide students of the University of Caloocan City (UCC) with a centralized platform for accessing academic and administrative services.
     <br />
     <br />
     <a href="https://github.com/PP-Namias/UCC-Student-Portal/issues">Report Bug</a>
