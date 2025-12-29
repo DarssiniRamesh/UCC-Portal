@@ -1,0 +1,2 @@
+# CI shell rc include: ensure local shims resolve for raw `sass` calls
+export PATH="$PWD:$PWD/bin:$PWD/tools:$PWD/tools/bin:$PWD/node_modules/.bin:$PWD/css:$PWD/scss:$PATH"

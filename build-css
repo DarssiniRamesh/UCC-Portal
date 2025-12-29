@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Preferred entrypoint for CI to build CSS without relying on global sass.
+set -euo pipefail
+exec bash "$(dirname "$0")/scripts/build-css.sh"

@@ -90,7 +90,7 @@ body {
   margin-left: 10px;
 }
 .portal__wrapper__form__wrapper__title h1 span {
-  color: #ff5e00;
+  color: #9F1015;
 }
 .portal__wrapper__form__wrapper__title p {
   margin-left: 10px;
@@ -102,7 +102,7 @@ body {
   position: absolute;
   width: 5px;
   height: 100%;
-  background: #ff5e00;
+  background: #9F1015;
   left: 0;
 }
 .portal__wrapper__form__wrapper__field {
@@ -120,10 +120,10 @@ body {
   transition: 0.3s ease-in-out;
 }
 .portal__wrapper__form__wrapper__field__input input:focus {
-  outline: 2px solid #ff5e00;
+  outline: 2px solid #9F1015;
 }
 .portal__wrapper__form__wrapper__field__input input:focus ~ label {
-  color: #ff5e00;
+  color: #9F1015;
 }
 .portal__wrapper__form__wrapper__field__input label {
   position: absolute;
@@ -149,7 +149,7 @@ body {
 }
 .portal__wrapper__form__wrapper__field__input #forgot-pass {
   float: right;
-  color: #ff5e00;
+  color: #9F1015;
   font-size: 0.9rem;
   margin: 3px 0 7px;
 }
@@ -166,7 +166,7 @@ body {
 }
 .portal__wrapper__form__wrapper__field__button button {
   width: 100%;
-  background: #ff5e00;
+  background: #9F1015;
   padding: 15px;
   color: #fff;
   cursor: pointer;
@@ -175,7 +175,7 @@ body {
   font-size: 0.9rem;
 }
 .portal__wrapper__form__wrapper__field #terms a {
-  color: #ff5e00;
+  color: #9F1015;
 }
 .portal__wrapper__hero {
   display: grid;
@@ -191,7 +191,7 @@ body {
   position: absolute;
   width: 100px;
   height: 100px;
-  background: #ff5e00;
+  background: #9F1015;
   top: 0;
   left: -100px;
   z-index: -1;
@@ -218,4 +218,5 @@ body {
     left: 0;
     top: 125px;
   }
-}/*# sourceMappingURL=index.css.map */
+}
+/*# sourceMappingURL=index.css.map */

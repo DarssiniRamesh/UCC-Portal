@@ -1,0 +1,8 @@
+SHELL := /bin/bash
+
+.PHONY: sass
+
+# Emulate: sass scss/index.scss css/index.css
+sass:
+	@bash scripts/build-css.sh
+	@echo "[Makefile.sass] css/index.css ensured."

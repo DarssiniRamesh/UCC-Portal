@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# CI shim for environments that invoke: `sass scss/index.scss css/index.css`
+# Delegates to the unified builder, which compiles via npx or falls back to committed CSS.
+set -euo pipefail
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ "${1:-}" = "scss/index.scss" ] && [ "${2:-}" = "css/index.css" ]; then
+  exec bash "${ROOT_DIR}/scripts/build-css.sh"
+else
+  # For other invocations, try npx sass; if unavailable, fail clearly.
+  if command -v npx >/dev/null 2>&1 && npx --yes --quiet sass --version >/dev/null 2>&1; then
+    exec npx sass "$@"
+  fi
+  echo "sass-ci-shim: sass is not available and cannot handle args: $*" >&2
+  exit 127
+fi

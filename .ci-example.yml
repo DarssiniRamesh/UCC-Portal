@@ -1,0 +1,14 @@
+# Example CI snippet ensuring local sass binary is used
+steps:
+  - name: Install dependencies
+    run: |
+      npm install --no-audit --no-fund
+  - name: Ensure PATH resolves local binaries
+    run: |
+      bash scripts/export-path-node-bin.sh
+  - name: Compile CSS via hardcoded command
+    run: |
+      sass scss/index.scss css/index.css
+  - name: Run Cypress (example)
+    run: |
+      npm run cypress:run

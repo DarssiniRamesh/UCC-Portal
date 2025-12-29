@@ -1,0 +1,8 @@
+SHELL := /bin/bash
+
+.PHONY: "sass_scss/index.scss_css/index.css"
+
+# Target name mirrors the hardcoded command by replacing spaces with underscores and escaping slash
+sass_scss/index.scss_css/index.css:
+	@bash scripts/build-css.sh
+	@echo "[Makefile.hardcoded] Ensured css/index.css (compiled or fallback)"

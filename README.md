@@ -39,6 +39,40 @@ The UCC Student Portal login page provides the following features:
   </a>
 </p>
 
+## E2E Testing with Cypress
+This project includes end-to-end tests using Cypress.
+
+Prerequisites:
+- Ensure the site is available locally at http://localhost:3000 (serve the UCC-Portal directory with your preferred static server).
+  - Example: npm run serve (uses http-server) or any other static server of your choice.
+- Build CSS from SCSS before serving (required for CI and local):
+  - npm run build:css  (default safe wrapper that installs sass if needed; falls back to precompiled css/index.fallback.css if sass is unavailable)
+  - or: npm run build:css:safe
+  - If your CI calls `sass scss/index.scss css/index.css` directly and cannot be changed:
+    - Add repo root to PATH so the local shim is found first:
+      - export PATH="$PWD:$PATH" && sass scss/index.scss css/index.css
+      (ensure the repo root is first in PATH so the local ./sass wrapper is used)
+    - Alternatively: npm install && ./node_modules/.bin/sass scss/index.scss css/index.css
+
+Install dependencies:
+- From UCC-Portal directory, run: npm install
+
+Build CSS:
+- npm run build:css (uses a safe wrapper)
+- To watch during development: npm run watch:css
+- In CI environments, you can run the helper script to install and build in one step:
+  - bash scripts/ci-build.sh
+
+Run tests interactively:
+- npm run cypress:open
+
+Run tests headlessly:
+- npm run cypress:run
+
+Notes:
+- The tests assume the DOM structure found in index.html (e.g., .portal__wrapper__hero, form.portal__wrapper__form, #studno, #acode, #captcha, #show-hide-pass, #captcha-img).
+- If you change selectors or structure, update the specs under cypress/e2e accordingly.
+
 ## ✨》Donate
 By Donating, You Will Help Me To Maintain This Project 
 - [Patreon](https://www.patreon.com/PP_Namias)

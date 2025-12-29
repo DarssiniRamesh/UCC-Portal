@@ -1,0 +1,5 @@
+# Keep executable wrappers in npm package if published (defensive; this repo is app code)
+!sass
+!bin/sass
+!bin/sass.sh
+!scripts/*.sh

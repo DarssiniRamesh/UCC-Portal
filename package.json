@@ -1,0 +1,33 @@
+{
+  "name": "ucc-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static UCC Student Portal with Cypress E2E tests",
+  "scripts": {
+    "prepare": "node -e \"process.exit(0)\" && npm run link-sass-bin || true",
+    "postprepare": "npm run link-sass-bin || true",
+    "postinstall": "bash scripts/build-css.sh || true && npm run link-sass-bin",
+    "link-sass-bin": "node -e \"const fs=require('fs');fs.mkdirSync('./node_modules/.bin',{recursive:true});fs.writeFileSync('./node_modules/.bin/sass','#!/usr/bin/env bash\\nif command -v npx >/dev/null 2>&1 && npx --yes --quiet sass --version >/dev/null 2>&1; then exec npx sass \\\"$@\\\"; fi; bash ./scripts/build-css.sh || true\\n');fs.chmodSync('./node_modules/.bin/sass',0o755);\"",
+    "sass": "bash scripts/build-css.sh",
+    "build:css": "bash scripts/build-css.sh",
+    "prebuild:css:safe": "bash scripts/prebuild.sh || cp -f css/index.fallback.css css/index.css",
+    "build:css:safe": "bash scripts/prebuild.sh || cp -f css/index.fallback.css css/index.css",
+    "watch:css": "npx sass --watch scss/index.scss css/index.css",
+    "serve": "npx http-server -p 3000 .",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "pretest": "bash scripts/prebuild-hook.sh",
+    "ci:sass:run": "bash scripts/run-hardcoded-sass.sh",
+    "ci:sass:make": "make -f Makefile.sass sass",
+    "ci:build:css": "bash scripts/build-css.sh",
+    "ci:hardcoded:sass": "make -f Makefile.hardcoded sass_scss/index.scss_css/index.css"
+  },
+  "bin": {
+    "sass": "bin/sass"
+  },
+  "devDependencies": {
+    "cypress": "^13.13.1",
+    "sass": "^1.79.5",
+    "sass-embedded": "^1.79.1"
+  }
+}

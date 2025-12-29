@@ -1,2 +1,19 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Preserve executable bit for scripts and binaries
+scripts/*.sh text eol=lf
+node_modules/.bin/* text eol=lf
+/bin/sass-universal text eol=lf
+/node_modules/.bin/sass text eol=lf
+bin/* text eol=lf
+tools/bin/* text eol=lf
+tools/global/* text eol=lf
+vendor/* text eol=lf
+scss/sass text eol=lf
+scss/sass.sh text eol=lf
+css/sass text eol=lf
+css/sass.sh text eol=lf
+sass text eol=lf
+sass.sh text eol=lf
+# Ensure root-level sass stub keeps LF endings and executable bit
+/sass text eol=lf
+/sass.sh text eol=lf
+/.sass text eol=lf

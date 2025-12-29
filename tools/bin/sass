@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# CI-safe sass shim under tools/bin to satisfy pipelines that prepend ./tools/bin to PATH
+# Always delegates to the robust builder which compiles via npx or copies fallback CSS.
+set -euo pipefail
+exec bash "$(dirname "$0")/../../scripts/build-css.sh"

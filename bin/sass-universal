@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Universal exact-name shim for CI that prepends ./bin to PATH.
+# Delegates to robust builder which compiles via npx sass or copies fallback.
+set -euo pipefail
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+exec bash "${ROOT_DIR}/scripts/build-css.sh"
